@@ -1,0 +1,37 @@
+
+.word-card-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #f5f5f5;
+}
+
+.center-card {
+	min-width: 320px;
+	max-width: 400px;
+	padding: 32px 24px 24px 24px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.word-header {
+	text-align: center;
+	margin-bottom: 32px;
+}
+
+.button-grid {
+	width: 100%;
+}
+
+.button-row {
+	display: flex;
+	justify-content: center;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.option-btn {
+	min-width: 120px;
+}

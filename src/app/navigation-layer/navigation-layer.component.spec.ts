@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CalculadoraComponent } from './calculadora.component';
+import { NavigationLayerComponent } from './navigation-layer.component';
 
-describe('CalculadoraComponent', () => {
-  let component: CalculadoraComponent;
-  let fixture: ComponentFixture<CalculadoraComponent>;
+describe('NavigationLayerComponent', () => {
+  let component: NavigationLayerComponent;
+  let fixture: ComponentFixture<NavigationLayerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CalculadoraComponent]
+      imports: [NavigationLayerComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CalculadoraComponent);
+    fixture = TestBed.createComponent(NavigationLayerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

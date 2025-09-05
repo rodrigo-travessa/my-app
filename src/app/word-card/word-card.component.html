@@ -1,0 +1,17 @@
+<div class="word-card-container">
+	<mat-card class="center-card">
+		<div class="word-header">
+			<h2>{{ word }}</h2>
+		</div>
+		<div class="button-grid">
+			<div class="button-row" *ngFor="let row of [0,1,2]">
+				<button mat-raised-button color="primary" class="option-btn">
+					{{ buttons[row * 2] }}
+				</button>
+				<button mat-raised-button color="accent" class="option-btn">
+					{{ buttons[row * 2 + 1] }}
+				</button>
+			</div>
+		</div>
+	</mat-card>
+</div>
