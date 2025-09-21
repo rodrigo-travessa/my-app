@@ -1,7 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+
+export interface WordOption {
+  label: string;
+  isCorrect: boolean;
+}
 
 @Component({
   selector: 'app-word-card',
@@ -10,11 +15,29 @@ import { CommonModule } from '@angular/common';
   templateUrl: './word-card.component.html',
   styleUrls: ['./word-card.component.scss']
 })
-export class WordCardComponent {
-  word: string = 'Example';
-  buttons: string[] = [
-    'Option 1', 'Option 2',
-    'Option 3', 'Option 4',
-    'Option 5', 'Option 6'
-  ];
+export class WordCardComponent implements OnInit {
+  @Output() next = new EventEmitter<void>();
+  @Input() word: string = 'Example';
+  @Input() buttons: WordOption[] = [];
+
+  selected = false;
+  selectedIndex: number | null = null;
+
+  ngOnInit() {
+    setTimeout(() => this.next.emit());
+  }
+  reset() {
+    this.selected = false;
+  }
+
+  selectOption(idx: number) {
+    console.log(idx)
+    this.selected = true;
+    this.selectedIndex = idx;
+  }
+
+  getButtonColor(option: WordOption): string {
+    if (!this.selected) return 'primary';
+    return option.isCorrect ? 'primary' : 'warn';
+  }
 }

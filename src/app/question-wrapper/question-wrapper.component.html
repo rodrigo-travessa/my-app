@@ -1,0 +1,8 @@
+
+<app-word-card
+  #wordCard
+  [word]="currentWord"
+  [buttons]="options"
+  (next)="pickWordAndOptions()"
+></app-word-card>
+<button mat-raised-button (click)="pickWordAndOptions()">Next Question</button>

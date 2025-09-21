@@ -1,7 +1,14 @@
 
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
 .nav-title {
 	font-weight: bold;
 	margin-right: 16px;
+	display: block;
 }
 
 .spacer {
