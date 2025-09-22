@@ -1,8 +1,11 @@
-
-<app-word-card
+<div class="question-wrapper">
+<span >Question {{currentIndex }} of {{totalWords}}</span>
+<span>Score: {{rightAnswers}} / {{(rightAnswers/questionsAsked *100).toPrecision(2)}}%</span>
+  <app-word-card
   #wordCard
   [word]="currentWord"
   [buttons]="options"
   (next)="pickWordAndOptions()"
-></app-word-card>
-<button mat-raised-button (click)="pickWordAndOptions()">Next Question</button>
+  (score)="incrementScore()"
+  ></app-word-card>
+</div>

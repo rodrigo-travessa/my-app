@@ -12,10 +12,26 @@ export class QuestionWrapperComponent {
   dictionary = DICTIONARY;
   currentWord: string = '';
   options: WordOption[] = [];
+  totalWords = Object.keys(this.dictionary).length;
+  currentIndex = 0;
+  rightAnswers = 0;
+  questionsAsked = 0;
+
+
+  ngOnInit() {
+    this.pickWordAndOptions();
+  }
 
   @ViewChild('wordCard') wordCardComponent!: WordCardComponent;
 
-   pickWordAndOptions() {
+  incrementScore() {
+    this.rightAnswers++;
+  }
+
+   pickWordAndOptions(wasRight?: boolean) {
+    this.questionsAsked++;
+   
+    this.currentIndex++;
     this.wordCardComponent?.reset();
     // Get all keys
     const keys = Object.keys(this.dictionary);
