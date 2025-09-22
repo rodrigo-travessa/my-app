@@ -1,4 +1,4 @@
-export const DICTIONARY: { [key: string]: string } = {
+export const DICTIONARY500: { [key: string]: string } = {
   "the": "o",
   "of": "de",
   "to": "para",
