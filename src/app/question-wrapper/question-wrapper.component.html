@@ -1,6 +1,6 @@
 <div class="question-wrapper">
 <span >Question {{currentIndex }} of {{totalWords}}</span>
-<span>Score: {{rightAnswers}} / {{(rightAnswers/questionsAsked *100).toPrecision(2)}}%</span>
+<span>Score: {{rightAnswers}} / {{((rightAnswers/questionsAsked)*100).toPrecision(3)}}%</span>
   <app-word-card
   #wordCard
   [word]="currentWord"
